@@ -1,0 +1,68 @@
+/* ===== Estilos de etiqueta ===== */
+body {
+  font-family: Verdana, sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+  color: #000000;
+  margin: 20px;
+  background-color:gainsboro;
+}
+
+h1 {
+  font-family: Arial, sans-serif;
+  font-size: 36px;
+  font-weight: bold;
+  color: #000080;            /* azul oscuro */
+  text-align: center;
+  background-color: #FFFFFF;
+  border-top: thin solid #3366CC;
+  border-bottom: thin solid #3366CC;
+  margin: 20px auto;
+}
+
+h2 {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* ===== Clases ===== */
+.TimesRojo {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 14px;
+  font-weight: bold;
+  color: #FF0000;
+}
+
+.TimesVerde {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 14px;
+  font-weight: bold;
+  color: #008000;
+}
+
+/* ===== Capas (id) ===== */
+#recuadro {
+  background-color: #F5A9A9;
+  font-size: 14px;
+  color: #74030A;
+  font-family: Arial, Times, sans-serif;
+  border: solid 3px;
+  padding: 15px;
+  margin: 20px auto 20px auto;
+  width: 50%;                /* porcentaje para adaptarse a la resolución */
+  border-radius: 25px;       /* borde redondeado */
+  box-shadow: 2px 2px 5px black; /* sombra */
+}
+
+#recuadro2 {
+  background-color: #9FD6FF;
+  font-size: 14px;
+  color: #1A0A8C;
+  font-family: Arial, Times, sans-serif;
+  border: dotted 3px #1A0A8C;
+  padding: 15px;
+  margin: 20px auto 20px auto;
+  width: 50%;
+  border-radius: 25px;
+  box-shadow: 2px 2px 5px black;
+}

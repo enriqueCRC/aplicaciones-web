@@ -1,12 +1,192 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mis prácticas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --fondo: #000;
+      --texto: #e8e8f0;
+      --cian: #00f0ff;
+      --magenta: #ff2bd6;
+      --verde: #39ff14;
+      --amarillo: #ffe600;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--fondo);
+      color: var(--texto);
+      font-family: "Orbitron", "Segoe UI", Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 64px 20px 48px;
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(2.2rem, 7vw, 4.2rem);
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      color: #fff;
+      text-align: center;
+      text-shadow:
+        0 0 6px #fff,
+        0 0 14px var(--cian),
+        0 0 30px var(--cian),
+        0 0 60px var(--cian);
+      animation: encendido 1.4s steps(1, end) 1;
+    }
+
+    /* El único movimiento automático: el título se enciende como un tubo de neón */
+    @keyframes encendido {
+      0%   { opacity: 0.15; }
+      10%  { opacity: 1; }
+      14%  { opacity: 0.2; }
+      22%  { opacity: 1; }
+      26%  { opacity: 0.4; }
+      32%  { opacity: 1; }
+      100% { opacity: 1; }
+    }
+
+    .subtitulo {
+      margin: 0 0 56px;
+      font-size: 1rem;
+      font-weight: 500;
+      color: #9a9ab0;
+      text-align: center;
+    }
+
+    .practicas {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      max-width: 720px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 28px;
+    }
+
+    .practicas li:nth-child(4n + 1) { --neon: var(--cian); }
+    .practicas li:nth-child(4n + 2) { --neon: var(--magenta); }
+    .practicas li:nth-child(4n + 3) { --neon: var(--verde); }
+    .practicas li:nth-child(4n + 4) { --neon: var(--amarillo); }
+
+    .practicas a {
+      display: block;
+      padding: 22px 24px;
+      color: var(--neon);
+      background: transparent;
+      border: 2px solid var(--neon);
+      border-radius: 14px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1.05rem;
+      line-height: 1.4;
+      text-shadow: 0 0 8px var(--neon);
+      box-shadow:
+        0 0 8px var(--neon),
+        0 0 22px color-mix(in srgb, var(--neon) 55%, transparent),
+        inset 0 0 12px color-mix(in srgb, var(--neon) 35%, transparent);
+      transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    }
+
+    .practicas a:hover,
+    .practicas a:focus-visible {
+      background: var(--neon);
+      color: #000;
+      text-shadow: none;
+      box-shadow:
+        0 0 14px var(--neon),
+        0 0 40px var(--neon),
+        0 0 80px color-mix(in srgb, var(--neon) 60%, transparent);
+      outline: none;
+    }
+
+    .practicas a:focus-visible {
+      outline: 2px solid #fff;
+      outline-offset: 4px;
+    }
+
+    .practicas .titulo {
+      display: block;
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+
+    .practicas .detalle {
+      display: block;
+      font-size: 0.85rem;
+      opacity: 0.85;
+    }
+
+    footer {
+      margin-top: auto;
+      padding-top: 56px;
+      font-size: 0.8rem;
+      color: #6a6a80;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      h1 { animation: none; }
+      .practicas a { transition: none; }
+    }
+  </style>
 </head>
 <body>
-   <h1>Servidor de enrique</h1> 
-    <p>probando Xampp... </p>
+
+  <h1>Mis prácticas</h1>
+  <p class="subtitulo">Aplicaciones Web · 2º SMR Enrique Clavero</p>
+
+  <!--
+    PARA AÑADIR UNA PRÁCTICA NUEVA:
+    1. Crea su carpeta (por ejemplo practica4) con su index.html dentro.
+    2. Copia un bloque <li>...</li> de abajo y cambia el enlace y los textos.
+    El color neón se asigna solo, en orden: cian, magenta, verde, amarillo.
+  -->
+  <ul class="practicas">
+    <li>
+      <a href="web1/index.html">
+        <span class="titulo">Práctica 1</span>
+        <span class="detalle">Primera web con xammp</span>
+      </a>
+    </li>
+    <li>
+      <a href="web2/index.php">
+        <span class="titulo">Práctica 2</span>
+        <span class="detalle">Practica con PHP</span>
+      </a>
+    </li>
+    <li>
+      <a href="practica2/index.html">
+        <span class="titulo">Práctica 3</span>
+        <span class="detalle">Currículum Vitae</span>
+      </a>
+    </li>
+
+<li>
+      <a href="TEMA4/miercoles.html">
+        <span class="titulo">Práctica 4</span>
+        <span class="detalle">Elemento en bloque y enlaces</span>
+      </a>
+    </li>
+
+
+
+
+
+  </ul>
+
+  <footer>Publicado con GitHub Pages</footer>
+
 </body>
 </html>
